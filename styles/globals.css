@@ -4,6 +4,20 @@
   font-size: 100%;
 }
 
+@font-face {
+  font-family: 'Bradford';
+  src: url('/assets/bradford/BradfordLL-Book.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bradford';
+  src: url('/assets/bradford/BradfordLL-Bookitalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
 @media only screen and (min-width: 670px) {
   :root {
     font-size: 100%;

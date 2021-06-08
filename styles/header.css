@@ -16,3 +16,11 @@ header nav ul {
   padding: 0;
   text-align: right;
 }
+
+header a {
+  color: inherit;
+}
+
+header nav .active {
+  text-align: left;
+}

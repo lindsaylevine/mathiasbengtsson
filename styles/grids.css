@@ -2,6 +2,6 @@
   --outerMargin: .5rem;
 }
 
-header {
+header, .block {
   padding: var(--outerMargin);
 }

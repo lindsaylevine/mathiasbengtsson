@@ -20,10 +20,10 @@ function Li({ data }) {
   const { slug, title } = data.fields
   const router = useRouter()
   const active = router.query.page === slug
-  console.log(router.query.page)
+  const archive = router.query.item && slug === "archive"
 
   return (
-    <li className={active && `active`}>
+    <li className={active || archive ? `active` : undefined}>
       <Link href={`/${slug}`}>
         {title}
       </Link>

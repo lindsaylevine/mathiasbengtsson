@@ -19,6 +19,7 @@ header nav ul {
 
 header a {
   color: inherit;
+  text-decoration: none;
 }
 
 header nav .active {

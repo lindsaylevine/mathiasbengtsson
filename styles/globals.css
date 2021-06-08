@@ -5,15 +5,15 @@
 }
 
 @font-face {
-  font-family: 'Bradford';
+  font-family: 'Bradford LL';
   src: url('/assets/bradford/BradfordLL-Book.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Bradford';
-  src: url('/assets/bradford/BradfordLL-Bookitalic.woff') format('woff');
+  font-family: 'Bradford LL';
+  src: url('/assets/bradford/BradfordLL-BookItalic.woff') format('woff');
   font-weight: 400;
   font-style: italic;
 }
@@ -29,6 +29,7 @@ html {
 }
 
 body {
+  font-family: 'Bradford LL', Times, serif;
 }
 
 p:empty {display: none;}
@@ -67,6 +68,22 @@ p:empty {display: none;}
  .no-hyphens {
    hyphens: none;
  }
+
+ .list-style-none {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+ }
+
+ .sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
  @import "grids.css";
  @import "header.css";

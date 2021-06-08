@@ -1,19 +1,13 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Layout from '../components/layout'
-import { APP_NAME, HOME_OG_IMAGE_URL, PAGE_DESCRIPTION } from '../lib/const'
-import { fetchEntries, fetchAllSlugs, fetchIndex } from '../lib/api'
-import dynamic from 'next/dynamic'
+import Layout from '../../components/layout'
+import { APP_NAME, HOME_OG_IMAGE_URL, PAGE_DESCRIPTION } from '../../lib/const'
+import { fetchEntries, fetchAllSlugs, fetchIndex } from '../../lib/api'
 
 
 export default function Page({ page, preview, index }) {
   const router = useRouter()
   if (!router.isFallback && !page) {return <p>Error</p>}
-
-  const DynamicComponent = dynamic(
-    () => import(`../components/${page.slug}/index`),
-    { ssr : false }
-  )
 
   return (
     <Layout preview={preview} index={index} page={page.slug}>
@@ -32,13 +26,12 @@ export default function Page({ page, preview, index }) {
         />
       </Head>
       <h1 className="sr-only">{page.title}</h1>
-      <DynamicComponent data={page} />
     </Layout>
   )
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const query = { content_type: 'page', 'fields.slug': params.page, limit: 1 }
+  const query = { content_type: 'artwork', 'fields.slug': params.item, limit: 1 }
   const page = await fetchEntries(preview, query)
 
   const index = (await fetchIndex(preview)) ?? []
@@ -53,10 +46,10 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 export async function getStaticPaths( preview = false ) {
-  const paths = await fetchAllSlugs(preview, "page")
+  const paths = await fetchAllSlugs(preview, "artwork")
 
   return {
-    paths: paths.items.map(path => `/${path.fields.slug}`) ?? [],
+    paths: paths.items.map(path => `/archive/${path.fields.slug}`) ?? [],
     fallback: true,
   }
 }

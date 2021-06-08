@@ -3,12 +3,13 @@ import Head from 'next/head'
 import Layout from '../../components/layout'
 import { APP_NAME, HOME_OG_IMAGE_URL, PAGE_DESCRIPTION } from '../../lib/const'
 import { fetchEntries, fetchAllSlugs, fetchIndex } from '../../lib/api'
+import Item from '../../components/archive/item/index'
 
 
 export default function Page({ page, preview, index }) {
   const router = useRouter()
   if (!router.isFallback && !page) {return <p>Error</p>}
-
+  console.log(page)
   return (
     <Layout preview={preview} index={index} page={page.slug}>
       <Head>
@@ -25,7 +26,7 @@ export default function Page({ page, preview, index }) {
           content={page.description ?? PAGE_DESCRIPTION}
         />
       </Head>
-      <h1 className="sr-only">{page.title}</h1>
+      <Item data={page} />
     </Layout>
   )
 }

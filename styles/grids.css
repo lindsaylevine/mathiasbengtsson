@@ -1,7 +1,10 @@
 :root {
   --outerMargin: .5rem;
+  --totalMaxWidth: 1440px;
 }
 
 header, .block {
   padding: var(--outerMargin);
+  max-width: var(--totalMaxWidth);
+  margin: 0 auto;
 }

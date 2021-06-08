@@ -85,5 +85,10 @@ p:empty {display: none;}
   width: 1px;
 }
 
+.soft-breaks {
+  white-space: pre-line;
+}
+
  @import "grids.css";
  @import "header.css";
+ @import "headlines.css";

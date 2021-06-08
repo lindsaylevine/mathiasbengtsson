@@ -3,9 +3,9 @@ import Layout from '../components/layout'
 import { fetchIndex } from '../lib/api'
 
 export default function Home({ preview, index }) {
-  console.log(index)
+
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} index={index}>
       <Head>
         <title>asso4077/nextjs-contentful-template</title>
       </Head>
@@ -19,6 +19,9 @@ export default function Home({ preview, index }) {
 export async function getStaticProps({ preview = false }) {
   const index = (await fetchIndex(preview)) ?? []
   return {
-    props: { preview, index },
+    props: {
+      preview,
+      index: index.items[0].fields
+    },
   }
 }

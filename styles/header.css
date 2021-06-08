@@ -1,0 +1,18 @@
+header .mb-title {
+  position: absolute;
+}
+
+header nav {
+  text-align: right;
+}
+
+header nav div {
+  margin-bottom: 1rem;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}

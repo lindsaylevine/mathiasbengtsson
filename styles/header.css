@@ -2,6 +2,11 @@ header.main {
   position: relative;
 }
 
+header.main.fixed {
+  position: fixed;
+  width: calc(100% - 1.5rem);
+}
+
 header.main.inline {
   margin-bottom: var(--outerMargin);
 }

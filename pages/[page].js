@@ -31,7 +31,7 @@ export default function Page({ page, preview, index }) {
           content={page.description ?? PAGE_DESCRIPTION}
         />
       </Head>
-      <Header index={index} margin />
+      <Header index={index} margin fixed={page.slug === "studio"} />
       <h1 className="sr-only">{page.title}</h1>
       <DynamicComponent data={page} />
     </Layout>

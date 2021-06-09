@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import { APP_NAME, HOME_OG_IMAGE_URL, PAGE_DESCRIPTION } from '../lib/const'
 import { fetchEntries, fetchAllSlugs, fetchIndex } from '../lib/api'
 import dynamic from 'next/dynamic'
-
+import Header from '../components/header/index'
 
 export default function Page({ page, preview, index }) {
   const router = useRouter()
@@ -31,6 +31,7 @@ export default function Page({ page, preview, index }) {
           content={page.description ?? PAGE_DESCRIPTION}
         />
       </Head>
+      <Header index={index} margin />
       <h1 className="sr-only">{page.title}</h1>
       <DynamicComponent data={page} />
     </Layout>

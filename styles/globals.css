@@ -30,6 +30,7 @@ html {
 
 body {
   font-family: 'Bradford LL', Times, serif;
+  line-height: 1.375em;
 }
 
 p:empty {display: none;}
@@ -75,6 +76,10 @@ p:empty {display: none;}
    margin: 0;
  }
 
+ .list-style-none p {
+   margin: 0;
+ }
+
  .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -93,3 +98,4 @@ p:empty {display: none;}
  @import "header.css";
  @import "headlines.css";
  @import "assets.css";
+ @import "articles.css";

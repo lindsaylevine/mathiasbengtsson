@@ -9,3 +9,10 @@
   max-width: var(--totalMaxWidth);
   margin: 0 auto;
 }
+
+.col-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  grid-auto-flow: column;
+}

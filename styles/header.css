@@ -1,6 +1,9 @@
 header.main {
   position: relative;
-  line-height: 1.3em;
+}
+
+header.main.inline {
+  margin-bottom: var(--outerMargin);
 }
 
 header.main .mb-title {

@@ -5,13 +5,12 @@ import { APP_NAME, HOME_OG_IMAGE_URL, PAGE_DESCRIPTION } from '../../lib/const'
 import { fetchEntries, fetchAllSlugs, fetchIndex } from '../../lib/api'
 import Item from '../../components/archive/item/index'
 
-
 export default function Page({ page, preview, index }) {
   const router = useRouter()
   if (!router.isFallback && !page) {return <p>Error</p>}
   console.log(page)
   return (
-    <Layout preview={preview} index={index} page={page.slug}>
+    <Layout preview={preview} page={page.slug}>
       <Head>
         <title>
           {APP_NAME}: {page.title}
@@ -26,7 +25,7 @@ export default function Page({ page, preview, index }) {
           content={page.description ?? PAGE_DESCRIPTION}
         />
       </Head>
-      <Item data={page} />
+      <Item data={page} index={index} />
     </Layout>
   )
 }

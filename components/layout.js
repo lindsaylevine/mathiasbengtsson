@@ -6,16 +6,10 @@ export default function Layout({ preview, children, index, page }) {
   return (
     <>
       <Meta />
-      <Alert preview={preview} />
-      <header>
-        <div className="mb-title">
-          Mathias Bengtsson
-        </div>
-        <Navigation index={index} />
-      </header>
-      <main className={page ?? "index"}>
-        {children}
-      </main>
+        <Alert preview={preview} />
+        <main className={page ?? "index"}>
+          {children}
+        </main>
     </>
   )
 }

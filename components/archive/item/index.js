@@ -1,6 +1,9 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Asset from './asset'
+import styles from './assets.module.css'
+import Header from '../../header/index'
 
-export default function Item({ data }) {
+export default function Item({ data, index }) {
   const {
     heroImage,
     material,
@@ -17,11 +20,15 @@ export default function Item({ data }) {
   console.log(assets)
 
   return (
-    <section className="block">
-      <article className="soft-breaks">
+    <article className={styles.container}>
+    <section className={styles.introduction + " block soft-breaks"}>
+        <Header index={index} />
         <h1>–{title}–</h1>
         {documentToReactComponents(textField)}
-      </article>
     </section>
+      {assets.map((asset, i) => (
+        <Asset data={asset} key={i} />
+      ))}
+    </article>
   )
 }

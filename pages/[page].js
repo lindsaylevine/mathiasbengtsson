@@ -39,7 +39,7 @@ export default function Page({ page, preview, index }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const query = { content_type: 'page', 'fields.slug': params.page, limit: 1 }
+  const query = { content_type: 'page', 'fields.slug': params.page, limit: 1, include: 3 }
   const page = await fetchEntries(preview, query)
 
   const index = (await fetchIndex(preview)) ?? []

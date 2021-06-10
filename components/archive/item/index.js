@@ -17,8 +17,6 @@ export default function Item({ data, index }) {
     slug
   } = data
 
-  console.log(assets)
-
   return (
     <article className={styles.container}>
     <section className={styles.introduction + " block soft-breaks"}>

@@ -7,7 +7,7 @@ export default function Asset({ data }) {
     fullscreen,
     rightAligned
   } = data.fields
-  console.log({asset, fullscreen, rightAligned})
+
   const position = rightAligned === true ? " right-aligned " : rightAligned === false ? " left-aligned " : " centered "
   const isFullscreen = fullscreen ? "fullscreen" : "margins"
   return (

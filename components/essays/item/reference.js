@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 
 export default function Reference(props) {
   const { asset, caption, rightAligned, fullscreen, i = 0, anchor } = props
-console.log(caption)
+
   if (!asset) {
     return <TextOnly data={caption} i={i} />
   }
@@ -33,7 +33,6 @@ console.log(caption)
 
 function TextOnly({ data, i }) {
 
-  console.log(data)
   if (!data) return null
 
   return (

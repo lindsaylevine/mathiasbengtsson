@@ -16,8 +16,6 @@ export default function Item({ data, index }) {
 
   const figures = article.content.filter(k => k.content.some(f => f.nodeType === "embedded-entry-inline"))
 
-  console.log(figures)
-
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ENTRY]: (node) => {
@@ -28,7 +26,6 @@ export default function Item({ data, index }) {
         return <div />
       },
       [INLINES.EMBEDDED_ENTRY]: (node) => {
-        console.log(node.data.target)
         const { id } = node.data.target.sys.contentType.sys;
         if (id === "media") {
           return <Reference {...node.data.target.fields} i={figures.findIndex(f => f.content.some(k => k.data?.target?.sys?.id === node.data.target.sys.id))} anchor />

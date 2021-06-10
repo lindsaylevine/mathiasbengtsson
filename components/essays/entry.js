@@ -1,11 +1,12 @@
 import styles from './archive.module.css'
 import { useRouter } from 'next/router'
+import { objectToInlineList, formatDate } from '../../lib/utils'
 
 export default function Entry({ data }) {
   const router = useRouter()
 
   const {
-    author,
+    authors,
     date,
     title,
     slug
@@ -19,9 +20,9 @@ export default function Entry({ data }) {
         query: { essay: slug },
       })}
       >
-      <span>{author}</span>
+      <span>{objectToInlineList(authors)}</span>
       <span>{title}</span>
-      <span>{date}</span>
+      <span>{formatDate(date)}</span>
     </li>
   )
 }

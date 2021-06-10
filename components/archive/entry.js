@@ -1,5 +1,6 @@
 import styles from './archive.module.css'
 import { useRouter } from 'next/router'
+import { formatDate } from '../../lib/utils'
 
 export default function Entry({ data }) {
   const router = useRouter()
@@ -26,7 +27,7 @@ export default function Entry({ data }) {
       <span>{type}</span>
       <span>{material}</span>
       <span>{dimensions}</span>
-      <span>{releaseDate}</span>
+      <span>{formatDate(releaseDate)}</span>
     </li>
   )
 }

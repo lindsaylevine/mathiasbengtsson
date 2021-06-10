@@ -1,9 +1,11 @@
+import Entry from './entry'
+
 export default function Contact({ data }) {
-  console.log(data)
-  
   return (
-    <section className={"block"}>
-      Hej
+    <section className="block">
+      {data.components.map((entry, i) => (
+        <Entry key={i} data={entry} />
+      ))}
     </section>
   )
 }

@@ -13,3 +13,8 @@ h3 {
   margin-block-start: 1em;
   margin-block-end: 0;
 }
+
+.contact h2::before,
+.contact h2::after {
+  content: "–";
+}

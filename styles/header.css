@@ -1,5 +1,6 @@
 header.main {
   position: relative;
+  padding-top: .8rem;
 }
 
 header.main.fixed {

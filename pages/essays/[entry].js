@@ -9,7 +9,7 @@ import Header from '../../components/header/index'
 export default function Page({ page, preview, index }) {
   const router = useRouter()
   if (!router.isFallback && !page) {return <p>Error</p>}
-  console.log(page)
+
   return (
     <Layout preview={preview} page={page.slug}>
       <Head>

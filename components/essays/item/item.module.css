@@ -1,0 +1,12 @@
+.container {
+  margin-top: 4rem;
+}
+
+.body {
+  margin-top: 4rem;
+}
+
+.figure {
+  position: absolute;
+  transform: translateX(calc(-100% - 4rem));
+}

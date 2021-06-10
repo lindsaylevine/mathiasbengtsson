@@ -1,5 +1,5 @@
 :root {
-  --outerMargin: .75rem;
+  --outerMargin: 1rem;
   --totalMaxWidth: 1720px;
   --mainHeaderHeight: 9rem;
 }

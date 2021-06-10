@@ -3,10 +3,71 @@
 }
 
 .body {
+  position: relative;
   margin-top: 4rem;
 }
 
-.figure {
+.inline {
   position: absolute;
   transform: translateX(calc(-100% - 4rem));
+  width: calc(50% - 2rem);
+  margin-top: -1.25em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .25rem .5rem;
+}
+
+.fullscreen {
+  margin-top: 1em;
+  margin-left: calc(-100% - 5rem);
+  margin-right: -1rem;
+  position: relative;
+}
+
+.portrait {
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-areas:
+  "reference asset caption"
+}
+
+.landscape {
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+  "reference asset"
+  "reference caption";
+}
+
+
+.reference {
+  grid-area: reference;
+  font-size: .85rem;
+  line-height: 1em;
+}
+
+.inlineRef {
+  font-size: .85rem;
+  line-height: 1em;
+  vertical-align: .125em;
+  margin-left: .25em;
+}
+
+.fullscreen .reference {
+  position: absolute;
+  left: var(--outerMargin);
+  top: var(--outerMargin);
+}
+
+.asset {
+  grid-area: asset;
+}
+
+.caption {
+  grid-area: caption;
+  align-self: flex-end;
+}
+
+.fullscreen .caption {
+  position: absolute;
+  left: var(--outerMargin);
+  bottom: var(--outerMargin);
 }

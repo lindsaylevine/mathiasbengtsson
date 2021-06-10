@@ -3,7 +3,11 @@ figure {
 }
 
 figcaption {
-  font-size: .85em;
+  font-size: .85rem;
+  line-height: 1.35em;
+}
+
+.artwork figcaption {
   margin: .125rem .75rem;
 }
 
@@ -30,7 +34,7 @@ img {
   object-fit: cover;
 }
 
-.fullscreen.centered figcaption {
+.artwork .fullscreen.centered figcaption {
   position: absolute;
   bottom: .5rem;
 }
@@ -45,6 +49,6 @@ img {
   object-fit: cover;
 }
 
-.fullscreen.right-aligned figcaption {
+.artwork .fullscreen.right-aligned figcaption {
   margin: .75rem;
 }

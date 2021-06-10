@@ -1,8 +1,8 @@
-import { BLOCKS } from '@contentful/rich-text-types'
+import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styles from './item.module.css'
 import { objectToInlineList, formatDate } from '../../../lib/utils'
-import Asset from './asset'
+import Reference from './reference'
 
 export default function Item({ data, index }) {
   const {
@@ -14,11 +14,25 @@ export default function Item({ data, index }) {
     slug
   } = data
 
+  const figures = article.content.filter(k => k.content.some(f => f.nodeType === "embedded-entry-inline"))
+
+  console.log(figures)
+
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ENTRY]: (node) => {
         const { id } = node.data.target.sys.contentType.sys;
-        if (id === "media") return <Asset {...node.data.target.fields} />
+        if (id === "media") {
+          return <Reference {...node.data.target.fields} />
+        }
+        return <div />
+      },
+      [INLINES.EMBEDDED_ENTRY]: (node) => {
+        console.log(node.data.target)
+        const { id } = node.data.target.sys.contentType.sys;
+        if (id === "media") {
+          return <Reference {...node.data.target.fields} i={figures.findIndex(f => f.content.some(k => k.data?.target?.sys?.id === node.data.target.sys.id))} anchor />
+        }
         return <div />
       }
     }

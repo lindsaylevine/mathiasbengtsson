@@ -8,6 +8,7 @@ import Item from '../../components/archive/item/index'
 export default function Page({ page, preview, index }) {
   const router = useRouter()
   if (!router.isFallback && !page) {return <p>Error</p>}
+  if (!page.slug) return <p>Error</p>
 
   return (
     <Layout preview={preview} page={page.slug}>

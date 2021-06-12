@@ -20,8 +20,8 @@ function Li({ data }) {
   const { slug, title } = data.fields
   const router = useRouter()
   const active = router.query.page === slug
-  const archive = router.query.item && slug === "archive"
-  const essays = router.query.item && slug === "essays"
+  const archive = router.query.item && (slug === "archive")
+  const essays = router.query.entry && (slug === "essays")
 
   return (
     <li className={active || archive || essays ? `active` : undefined}>

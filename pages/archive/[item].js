@@ -31,6 +31,16 @@ export default function Page({ page, preview, index }) {
   )
 }
 
+export async function getStaticPaths( preview = false ) {
+  const index = await fetchAllSlugs(preview, "artwork")
+  const paths = index.items.map(path => `/archive/${path.fields.slug}`) ?? []
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
 export async function getStaticProps({ params, preview = false }) {
   const query = { content_type: 'artwork', 'fields.slug': params.item, limit: 1 }
   const page = await fetchEntries(preview, query)
@@ -43,14 +53,5 @@ export async function getStaticProps({ params, preview = false }) {
       page: page.items[0].fields ?? null,
       index: index.items[0].fields
     },
-  }
-}
-
-export async function getStaticPaths( preview = false ) {
-  const paths = await fetchAllSlugs(preview, "artwork")
-
-  return {
-    paths: paths.items.map(path => `/archive/${path.fields.slug}`) ?? [],
-    fallback: true,
   }
 }

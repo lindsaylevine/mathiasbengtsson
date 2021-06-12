@@ -55,6 +55,6 @@ export async function getStaticPaths( preview = false ) {
 
   return {
     paths: paths.map(path => `/essays/${path.fields.slug}`) ?? [],
-    fallback: true,
+    fallback: false,
   }
 }

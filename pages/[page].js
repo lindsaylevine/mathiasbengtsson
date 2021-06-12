@@ -39,6 +39,15 @@ export default function Page({ page, preview, index }) {
   )
 }
 
+export async function getStaticPaths( preview = false ) {
+  const paths = await fetchAllSlugs(preview, "page")
+
+  return {
+    paths: paths.items.map(path => `/${path.fields.slug}`) ?? [],
+    fallback: false,
+  }
+}
+
 export async function getStaticProps({ params, preview = false }) {
   const query = { content_type: 'page', 'fields.slug': params.page, limit: 1, include: 3 }
   const page = await fetchEntries(preview, query)
@@ -51,14 +60,5 @@ export async function getStaticProps({ params, preview = false }) {
       page: page.items[0].fields ?? null,
       index: index.items[0].fields
     },
-  }
-}
-
-export async function getStaticPaths( preview = false ) {
-  const paths = await fetchAllSlugs(preview, "page")
-
-  return {
-    paths: paths.items.map(path => `/${path.fields.slug}`) ?? [],
-    fallback: true,
   }
 }

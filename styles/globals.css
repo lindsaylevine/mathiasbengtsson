@@ -41,6 +41,17 @@ p:empty {display: none;}
 	}
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
 .hyphens {
      -webkit-hyphens: auto;
      -webkit-hyphenate-limit-before: 3;

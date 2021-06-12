@@ -20,7 +20,7 @@ export default function Item({ data, index }) {
   return (
     <article className={styles.container}>
     <section className={styles.introduction + " block soft-breaks"}>
-        <Header index={index} />
+      <Header index={index} />
         <h1>–{title}–</h1>
         {documentToReactComponents(textField)}
     </section>

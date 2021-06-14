@@ -34,9 +34,10 @@ img {
   object-fit: cover;
 }
 
-.artwork .fullscreen.centered figcaption {
+.fullscreen.centered figcaption {
   position: absolute;
-  bottom: .5rem;
+  bottom: var(--outerMargin);
+  left: var(--outerMargin);
 }
 
 .fullscreen.right-aligned {
@@ -45,10 +46,9 @@ img {
 }
 
 .fullscreen.right-aligned img {
-  height: 100%;
   object-fit: cover;
 }
 
-.artwork .fullscreen.right-aligned figcaption {
+.fullscreen.right-aligned figcaption {
   margin: .75rem;
 }

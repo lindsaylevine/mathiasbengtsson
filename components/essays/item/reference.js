@@ -1,5 +1,6 @@
 import styles from './item.module.css'
 import ReactMarkdown from 'react-markdown'
+import { Img } from '../../../lib/image'
 
 export default function Reference(props) {
   const { asset, caption, rightAligned, fullscreen, i = 0, anchor } = props
@@ -18,7 +19,13 @@ export default function Reference(props) {
       <div className={styles.reference}>
         {i + 1}{!fullscreen && ":"}
       </div>
-      <img className={styles.asset} src={asset.fields.file.url} alt={asset.fields.description ?? caption ?? "This image has no description"} />
+      <Img
+        className={styles.asset}
+        src={asset.fields.file.url}
+        width={asset.fields.file.details.image.width}
+        height={asset.fields.file.details.image.height}
+        alt={asset.fields.description ?? "No description available"}
+        />
       {caption &&
         <figcaption className={styles.caption}>
           <ReactMarkdown components={{p: 'span'}}>

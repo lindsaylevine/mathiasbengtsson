@@ -1,40 +1,40 @@
 .container {
-  margin-top: 4rem;
+  margin-top: 1rem;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .body {
   position: relative;
-  margin-top: 4rem;
+  margin-top: 1rem;
+  width: calc(100vw - 3rem);
 }
 
 .inline {
   position: absolute;
-  transform: translateX(calc(-100% - 4rem));
-  width: calc(50% - 2rem);
+  transform: translateX(calc(100% + 3rem));
+  width: calc(100% - 2rem);
   margin-top: -1.25em;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: .25rem .5rem;
 }
 
-.fullscreen {
-  margin-top: 1em;
-  margin-left: calc(-100% - 5rem);
-  margin-right: -1rem;
-  position: relative;
-}
+
 
 .portrait {
-  grid-template-columns: auto 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-  "reference asset caption"
+  "reference reference"
+  "asset caption"
 }
 
 .landscape {
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-  "reference asset"
-  "reference caption";
+  "reference"
+  "asset"
+  "caption";
 }
 
 
@@ -51,11 +51,7 @@
   margin-left: .25em;
 }
 
-.fullscreen .reference {
-  position: absolute;
-  left: var(--outerMargin);
-  top: var(--outerMargin);
-}
+
 
 .asset {
   grid-area: asset;
@@ -66,8 +62,90 @@
   align-self: flex-end;
 }
 
-.fullscreen .caption {
+
+
+.refView {
+  transform: translateX(calc(-100% + 1rem));
+}
+
+.bodyView {
+  transform: 0;
+}
+
+.fullscreen {
+  margin-top: 1em;
+  margin-left: -1rem;
+  margin-right: -2rem;
+  position: relative;
+}
+
+.fullscreen .reference {
   position: absolute;
   left: var(--outerMargin);
-  bottom: var(--outerMargin);
+  top: var(--outerMargin);
+}
+
+.fullscreen .caption {
+  margin: .25rem var(--outerMargin) 0 var(--outerMargin);
+}
+
+.toggle {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 2rem;
+}
+
+@media screen and (min-width: 670px) {
+  .container {
+    margin-top: 4rem;
+  }
+
+  .body {
+    margin-top: 4rem;
+  }
+
+  .inline {
+    position: absolute;
+    transform: translateX(calc(-100% - 4rem));
+    width: calc(50% - 2rem);
+    margin-top: -1.25em;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .25rem .5rem;
+  }
+
+  .portrait {
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-areas:
+    "reference asset caption"
+  }
+
+  .landscape {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+    "reference asset"
+    "reference caption";
+  }
+
+  .fullscreen {
+    margin-top: 1em;
+    margin-left: calc(-100% - 5rem);
+    margin-right: -1rem;
+    position: relative;
+  }
+
+  .fullscreen .reference {
+    position: absolute;
+    left: var(--outerMargin);
+    top: var(--outerMargin);
+  }
+
+  .fullscreen .caption {
+    position: absolute;
+    left: var(--outerMargin);
+    bottom: var(--outerMargin);
+  }
+
+  .toggle { display: none }
 }

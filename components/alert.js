@@ -2,7 +2,7 @@ export default function Alert({ preview }) {
 
   if (preview) {
     return (
-      <div>
+      <div className="alert">
         This is a preview.{' '}
         <a href="/api/exit-preview">
           Click here to exit preview mode.

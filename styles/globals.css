@@ -105,6 +105,12 @@ a {
   white-space: pre-line;
 }
 
+.alert {
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding: .25rem;
+}
+
  @import "grids.css";
  @import "header.css";
  @import "headlines.css";

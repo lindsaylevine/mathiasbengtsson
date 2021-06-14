@@ -20,7 +20,7 @@ export default function Entry({ data }) {
         query: { essay: slug },
       })}
       >
-      <span>{objectToInlineList(authors)}</span>
+      <span>{objectToInlineList(authors)}:</span>
       <span>{title}</span>
       <span>{formatDate(date)}</span>
     </li>

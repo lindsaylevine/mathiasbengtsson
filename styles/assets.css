@@ -16,12 +16,12 @@ img {
   height: auto;
 }
 
-.margins {
-  width: 75%;
-}
-
 .margins.right-aligned {
   padding-left: 25%;
+}
+
+.margins.centered figcaption {
+  margin-left: var(--outerMargin);
 }
 
 .fullscreen.centered {
@@ -51,4 +51,10 @@ img {
 
 .fullscreen.right-aligned figcaption {
   margin: .75rem;
+}
+
+@media screen and (min-width: 670px) {
+  .margins {
+    width: 75%;
+  }
 }

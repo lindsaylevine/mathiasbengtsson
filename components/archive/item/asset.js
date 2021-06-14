@@ -1,4 +1,5 @@
 import styles from './assets.module.css'
+import { Img } from '../../../lib/image'
 
 export default function Asset({ data }) {
   const {
@@ -8,13 +9,18 @@ export default function Asset({ data }) {
     rightAligned
   } = data.fields
 
+  console.log(asset)
+
   const position = rightAligned === true ? " right-aligned " : rightAligned === false ? " left-aligned " : " centered "
   const isFullscreen = fullscreen ? "fullscreen" : "margins"
   return (
     <figure className={styles.asset + position + isFullscreen}>
-      <img
-        src={asset.fields.file.url}
-        />
+        <Img
+          src={asset.fields.file.url}
+          width={asset.fields.file.details.image.width}
+          height={asset.fields.file.details.image.height}
+          alt={asset.fields.description ?? "No description available"}
+          />
       {caption &&
         <figcaption>
           {caption}

@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  gap: .75rem;
-  grid-template-columns: 1fr 12rem;
+  gap: var(--outerMargin);
+  grid-template-columns: 1fr;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -10,6 +10,10 @@
 .assets {
   position: relative;
   width: 80vmin;
+  height: 80vmin;
+  margin-left: var(--outerMargin);
+  margin-right: var(--outerMargin);
+  margin-bottom: var(--outerMargin);
 }
 
 .asset {
@@ -28,8 +32,29 @@
   object-position: bottom left;
 }
 
+.indicator {
+
+}
+
 .reference {
-  text-align: right;
+  margin-left: var(--outerMargin);
   margin-right: var(--outerMargin);
   margin-bottom: var(--outerMargin);
+}
+
+.reference {order: 1}
+.assets {order: 2}
+
+@media screen and (min-width: 670px) {
+  .grid {
+    grid-template-columns: 1fr 12rem;
+    bottom: 0;
+  }
+
+  .reference {
+    order: 2;
+    text-align: right;
+
+  }
+  .assets {order: 1}
 }

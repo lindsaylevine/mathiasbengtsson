@@ -22,7 +22,7 @@ export default function Studio({ data }) {
             <Entry key={i} data={entry} display={i <= progress} />
           ))}
         </div>
-        <ul className="indicator list-style-none">
+        <ul className={`${styles.indicator} list-style-none`}>
           {data.components.map((entry, i) => (
             <Indicator key={i} data={entry} i={i} display={i === progress} />
           ))}

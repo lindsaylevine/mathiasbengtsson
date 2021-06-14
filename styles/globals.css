@@ -24,6 +24,12 @@
   }
 }
 
+@media only screen and (max-width: 669px) {
+  .md {
+    display: none;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

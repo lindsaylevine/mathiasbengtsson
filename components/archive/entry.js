@@ -26,7 +26,7 @@ export default function Entry({ data }) {
       <span>{name}</span>
       <span>{type}</span>
       <span>{material}</span>
-      <span>{dimensions}</span>
+      <span className="md">{dimensions}</span>
       <span>{formatDate(releaseDate)}</span>
     </li>
   )

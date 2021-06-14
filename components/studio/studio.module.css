@@ -11,9 +11,6 @@
   position: relative;
   width: 80vmin;
   height: 80vmin;
-  margin-left: var(--outerMargin);
-  margin-right: var(--outerMargin);
-  margin-bottom: var(--outerMargin);
 }
 
 .asset {

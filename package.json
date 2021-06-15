@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
@@ -16,8 +16,5 @@
     "react-dom": "17.0.1",
     "react-markdown": "^6.0.2",
     "react-swipeable": "^6.1.2"
-  },
-  "devDependencies": {
-    "yarn-upgrade-all": "^0.5.4"
   }
 }

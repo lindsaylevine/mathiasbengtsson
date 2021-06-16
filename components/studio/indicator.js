@@ -5,7 +5,12 @@ export default function Entry({ data, i, display }) {
 
   return (
     <li className={styles.reference}>
-      <span style={{ display: display ? "inline" : "none" }}>–{title}–</span><span className="md">&ensp;{i + 1}</span>
+      <span style={{ visibility: display ? "visible" : "hidden" }}>
+          {title}
+      </span>
+      <span className={"mds "}>
+        &ensp;{i + 1}
+      </span>
     </li>
   )
 }

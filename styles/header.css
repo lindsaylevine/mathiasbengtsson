@@ -5,7 +5,8 @@ header.main {
 
 header.main.fixed {
   position: fixed;
-  width: calc(100% - 1.5rem);
+  width: calc(100% - (var(--outerMargin) * 2));
+  z-index: 200;
 }
 
 header.main.inline {

@@ -23,14 +23,8 @@ export default function Page({ page, preview, index }) {
           {APP_NAME}: {page.title}
         </title>
         <meta property="og:image" content={HOME_OG_IMAGE_URL} />
-        <meta
-          name="description"
-          content={page.description ?? PAGE_DESCRIPTION}
-        />
-        <meta
-          name="og:description"
-          content={page.description ?? PAGE_DESCRIPTION}
-        />
+        <meta name="description" content={page.description ?? PAGE_DESCRIPTION} />
+        <meta name="og:description" content={page.description ?? PAGE_DESCRIPTION} />
       </Head>
       <Header index={index} margin fixed={page.slug === "studio"} />
       <h1 className="sr-only">{page.title}</h1>

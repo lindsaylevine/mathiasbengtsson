@@ -4,3 +4,9 @@
   flex-direction: column;
   cursor: pointer;
 }
+
+@media screen and (min-width: 670px) {
+  .listItem {
+    flex-direction: row;
+  }
+}

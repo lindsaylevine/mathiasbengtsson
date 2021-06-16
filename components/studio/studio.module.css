@@ -1,52 +1,62 @@
-.grid {
-  display: grid;
-  gap: var(--outerMargin);
-  grid-template-columns: 1fr;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.container {
 }
 
-.assets {
+.snap {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+.assetContainer {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
   position: relative;
-  width: 80vmin;
-  height: 80vmin;
+  display: flex;
+  align-items: flex-end;
 }
 
 .asset {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding-bottom: 100%;
+
+}
+
+.landscape {
+  width: 60vw;
+}
+
+.portrait {
+  width: 40vw;
 }
 
 .asset img {
-  position: absolute;
-  top: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: bottom left;
+  position: absolute;
+  bottom: 0;
 }
 
 .indicator {
-
+  position: fixed;
+  top: var(--mainHeaderHeight);
+  z-index: 200;
+  width: 100%;
 }
 
 .reference {
+  display: flex;
+  justify-content: space-between;
   margin-left: var(--outerMargin);
   margin-right: var(--outerMargin);
-  margin-bottom: var(--outerMargin);
 }
 
 .indicator {order: 1}
 .assets {order: 2}
 
 @media screen and (min-width: 670px) {
-  .grid {
-    grid-template-columns: 1fr 12rem;
-    bottom: 0;
-  }
 
   .indicator {
     order: 2;

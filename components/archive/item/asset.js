@@ -15,12 +15,14 @@ export default function Asset({ data }) {
   const isFullscreen = fullscreen ? "fullscreen" : "margins"
   return (
     <figure className={styles.asset + position + isFullscreen}>
+      {asset &&
         <Img
           src={asset.fields.file.url}
           width={asset.fields.file.details.image.width}
           height={asset.fields.file.details.image.height}
           alt={asset.fields.description ?? "No description available"}
           />
+      }
       {caption &&
         <figcaption>
           {caption}

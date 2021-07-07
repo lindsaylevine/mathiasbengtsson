@@ -15,7 +15,7 @@ export default function Asset({ data }) {
   const isFullscreen = fullscreen ? "fullscreen" : "margins"
   return (
     <figure className={styles.asset + position + isFullscreen}>
-      {asset &&
+      {asset?.fields?.file &&
         <Img
           src={asset.fields.file.url}
           width={asset.fields.file.details.image.width}

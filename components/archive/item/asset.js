@@ -21,7 +21,7 @@ export default function Asset({ data }) {
           src={asset.fields.file.url}
           width={asset.fields.file.details.image.width}
           height={asset.fields.file.details.image.height}
-          alt={asset.fields.description ?? "No description available"}
+          alt={asset.fields.description ?? "No description is available"}
           />
       }
       {caption &&

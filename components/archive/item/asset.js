@@ -2,6 +2,8 @@ import styles from './assets.module.css'
 import { Img } from '../../../lib/image'
 
 export default function Asset({ data }) {
+  if (!data.fields) return null
+
   const {
     asset,
     caption,
@@ -9,7 +11,6 @@ export default function Asset({ data }) {
     rightAligned
   } = data.fields
 
-  console.log(asset)
 
   const position = rightAligned === true ? " right-aligned " : rightAligned === false ? " left-aligned " : " centered "
   const isFullscreen = fullscreen ? "fullscreen" : "margins"
